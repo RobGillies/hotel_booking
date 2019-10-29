@@ -18,7 +18,7 @@ public class Main {
         print_bookings(customer_bookings);
 
         // Task 3 - check availability
-        List<Room> available_rooms = search_available_rooms(parseDate("2014-02-01"), 4);
+        List<Room> available_rooms = get_available_rooms(parseDate("2014-02-01"), 4);
         print_rooms(available_rooms);
     }
 

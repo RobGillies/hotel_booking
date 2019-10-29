@@ -40,7 +40,7 @@ public class HotelService {
         return customer_bookings;
     }
 
-    public static List<Room> search_available_rooms(Date search_date, int capacity) {
+    public static List<Room> get_available_rooms(Date search_date, int capacity) {
         List<Room> rooms = get_rooms(1);
         List<Room> available_rooms = new ArrayList<>();
         boolean available = true;
