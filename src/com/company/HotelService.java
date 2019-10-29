@@ -43,9 +43,9 @@ public class HotelService {
     public static List<Room> get_available_rooms(Date search_date, int capacity) {
         List<Room> rooms = get_rooms(1);
         List<Room> available_rooms = new ArrayList<>();
-        boolean available = true;
 
         for (Room room : rooms) {
+            boolean available = true;
             if (room.get_capacity() >= capacity) {
                 List<Bookings> bookings = get_bookings_by_room_id(room.get_room_id());
                 for (Bookings booking : bookings) {
