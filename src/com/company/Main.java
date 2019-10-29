@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.List;
-
+import static com.company.HotelService.*;
 import static com.company.HotelService.search_available_rooms;
 import static com.company.HotelService.search_bookings_by_customer_second_name;
 import static com.company.Utils.parseDate;
@@ -10,19 +10,17 @@ import static com.company.Utils.parseDate;
 public class Main {
 
     public static void main(String[] args) {
-        Hotel hotel = new Hotel(1);
-        List<Room> rooms = hotel.get_rooms();
-        List<Bookings> bookings = hotel.get_bookings();
+        int hotel_id = 1;
 
         // Task 1 - print all rooms
-        print_rooms(rooms);
+        print_rooms(get_rooms(hotel_id));
 
         // Task 2 - search for bookings
-        List<Bookings> customer_bookings = search_bookings_by_customer_second_name(bookings, "Gillies");
+        List<Bookings> customer_bookings = search_bookings_by_customer_second_name("Gillies");
         print_bookings(customer_bookings);
 
         // Task 3 - check availability
-        List<Room> available_rooms = search_available_rooms(rooms, bookings, parseDate("2014-02-01"), 4);
+        List<Room> available_rooms = search_available_rooms(parseDate("2014-02-01"), 4);
         print_rooms(available_rooms);
     }
 
